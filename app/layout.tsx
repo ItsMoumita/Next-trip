@@ -1,12 +1,12 @@
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { Inter, Oxanium } from "next/font/google";
+import { Oxanium } from "next/font/google";
 import Footer from "./Components/footer";
 import { Navbar } from "./Components/navbar";
 import "./globals.css";
 
-const oxanium = Oxanium({subsets:['latin'],variable:'--font-sans'});
+const oxanium = Oxanium({ subsets: ["latin"], variable: "--font-sans" });
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -26,7 +26,7 @@ const oxanium = Oxanium({subsets:['latin'],variable:'--font-sans'});
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={cn("font-sans", oxanium.variable)}>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full max-w-11/12 mx-auto flex flex-col">
         <Navbar></Navbar>
         {children}
         <Footer></Footer>

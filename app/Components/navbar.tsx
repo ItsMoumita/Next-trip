@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as React from "react";
 
 import {
@@ -13,46 +14,51 @@ import {
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Home",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    href: "/",
+    description: "",
   },
   {
     title: "Packages",
     href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    description: "",
   },
   {
     title: "Resorts",
     href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "",
   },
   {
     title: "About Us",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description: "",
   },
   {
     title: "Login",
     href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    description: "",
   },
   {
     title: "Register",
     href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    description: "",
   },
 ];
 
 export function Navbar() {
+  const isHomePage = usePathname() === "/";
+
   return (
-    <NavigationMenu className="w-full max-w-full! border-b border-primary text-primary">
+    <NavigationMenu
+      className={
+        isHomePage
+          ? "absolute! inset-x-0 top-0 z-50 max-w-11/12! mx-auto bg-transparent text-white border-b border-primary"
+          : "max-w-11/12! mx-auto border-b border-primary text-primary"
+      }
+    >
       <NavigationMenuList className="max-w-3/4 mx-auto flex flex-row items-center justify-between gap-2 p-2">
-        <NavigationMenuItem>Next-Trip</NavigationMenuItem>
+        <NavigationMenuItem className="text-2xl md:3xl font-bold">
+          Next-Trip
+        </NavigationMenuItem>
 
         {components.map((component) => (
           <NavigationMenuItem
