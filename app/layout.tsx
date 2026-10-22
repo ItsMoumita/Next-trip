@@ -26,7 +26,7 @@ const oxanium = Oxanium({ subsets: ["latin"], variable: "--font-sans" });
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={cn("font-sans", oxanium.variable)}>
-      <body className="min-h-full max-w-11/12 mx-auto flex flex-col">
+      <body className="min-h-full flex flex-col">
         <Navbar></Navbar>
         {children}
         <Footer></Footer>
