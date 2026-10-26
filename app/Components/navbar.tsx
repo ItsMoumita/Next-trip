@@ -34,12 +34,12 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Login",
-    href: "/docs/primitives/tabs",
+    href: "/login",
     description: "",
   },
   {
     title: "Register",
-    href: "/docs/primitives/tooltip",
+    href: "/signup",
     description: "",
   },
 ];
