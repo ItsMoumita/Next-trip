@@ -53,8 +53,8 @@ export function Navbar() {
     <NavigationMenu
       className={
         isHomePage
-          ? "absolute! inset-x-0 top-0 z-50 max-w-full!  mx-auto bg-transparent text-white border-b border-primary"
-          : "max-w-full! mx-auto border-b border-primary text-primary"
+          ? "absolute! inset-x-0 top-0 z-50 w-full! max-w-none bg-transparent text-white border-b border-primary"
+          : "w-full! max-w-none border-b border-primary text-primary"
       }
     >
       <NavigationMenuList className="lg:max-w-3/4 mx-auto flex flex-row items-center justify-between gap-2 p-2">
